@@ -15,6 +15,8 @@ export default function App() {
     'Gigalith',
     'Metagross',
     'Ambipom',
+    'Dracozolt',
+    'Exploud',
   ];
   const pokeArray1 = [
     'Golurk',
@@ -23,6 +25,8 @@ export default function App() {
     'Houndoom',
     'Haxorus',
     'Swampert',
+    'Umbreon',
+    'Mamoswine',
   ];
 
   const spinWheels = () => {

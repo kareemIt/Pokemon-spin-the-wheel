@@ -1,7 +1,7 @@
 .mainbox {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 500px;
+  height: 500px;
 }
 .box {
   width: 100%;
@@ -44,7 +44,7 @@ span {
   left: 0px;
 }
 .span2 {
-  clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+  clip-path: polygon(100% 92%, 0 50%, 92% 8%);
   background-color: blue;
   top: 120px;
   right: 0px;
@@ -52,6 +52,12 @@ span {
 .span3 {
   clip-path: polygon(50% 100%, 92% 0, 8% 0);
   background-color: green;
+  left: 120px;
+  bottom: 0px;
+}
+.span4 {
+  clip-path: polygon(50% 100%, 92% 0, 8% 0);
+  background-color: purple;
   top: 0px;
   left: 120px;
 }

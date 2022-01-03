@@ -24,17 +24,18 @@ export default function App() {
     'Haxorus',
     'Swampert',
   ];
-  function spinWheels() {
+
+  const spinWheels = () => {
     //spin
     setSpun(true);
-  }
+  };
   // console.log(pokePicked);
   return (
     <div>
       <h1>Pokemon Spin The Wheel</h1>
       <Wheel array={pokeArray} landed={setPokePicked} />
       <button onClick={spinWheels}>Spin</button>
-      <Wheel array={[pokeArray1]} landed={setPokePicked1} />
+      <Wheel array={pokeArray1} landed={setPokePicked1} />
       {!spun || (
         <>
           <span>Results</span>

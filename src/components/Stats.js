@@ -18,27 +18,31 @@ const Stats = ({ pokemon }) => {
   const searchPokemon = () => {
     Axios.get('https://pokeapi.co/api/v2/pokemon/' + pokemon).then(
       (response) => {
-        console.log(response);
+        const hp = response.data.stats[0].base_stat;
+        const attack = response.data.stats[1].base_stat;
+        const defense = response.data.stats[2].base_stat;
+        const spAtt = response.data.stats[3].base_stat;
+        const spDef = response.data.stats[4].base_stat;
+        const speed = response.data.stats[5].base_stat;
         setPokemonStats({
           image: response.data.sprites.front_default,
           name: pokemon,
           type: response.data.types[0].base_stat,
           species: response.data.species.name,
-          hp: response.data.stats[0].base_stat,
-          attack: response.data.stats[1].base_stat,
-          defense: response.data.stats[2].base_stat,
-          spAtt: response.data.stats[3].base_stat,
-          spDef: response.data.stats[4].base_stat,
-          speed: response.data.stats[5].base_stat,
+          hp,
+          attack,
+          defense,
+          spAtt,
+          spDef,
+          speed,
           total: hp + attack + defense + spAtt + spDef + speed,
         });
       }
     );
   };
-  console.log(pokemonStats.types);
   return (
     <div>
-      <span>{pokemonStats.hp}</span>
+      <span>{pokemonStats.total}</span>
       <button onClick={searchPokemon}>hi</button>
     </div>
   );

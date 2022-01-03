@@ -8,30 +8,30 @@ const Wheel = ({ array, landed }) => {
         <div className="box">
           <div className="box1">
             <span className="span1">
-              <strong>1</strong>
+              <strong>{array[0]}</strong>
             </span>
             <span className="span2">
-              <strong>2</strong>
+              <strong>{array[1]}</strong>
             </span>
             <span className="span3">
-              <strong>3</strong>
+              <strong>{array[2]}</strong>
             </span>
             <span className="span4">
-              <strong>4</strong>
+              <strong>{array[3]}</strong>
             </span>
           </div>
           <div className="box2">
             <span className="span1">
-              <strong>5</strong>
+              <strong>{array[4]}</strong>
             </span>
             <span className="span2">
-              <strong>6</strong>
+              <strong>{array[5]}</strong>
             </span>
             <span className="span3">
-              <strong>7</strong>
+              <strong>{array[6]}</strong>
             </span>
             <span className="span4">
-              <strong>8</strong>
+              <strong>{array[7]}</strong>
             </span>
           </div>
         </div>

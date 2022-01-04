@@ -24,7 +24,6 @@ const Stats = ({ pokemon }) => {
         const spDef = response.data.stats[4].base_stat;
         const speed = response.data.stats[5].base_stat;
         const typing = response.data.types.map((index) => {
-          console.log(index);
           return index.type.name + ' ';
         });
         console.log(response);

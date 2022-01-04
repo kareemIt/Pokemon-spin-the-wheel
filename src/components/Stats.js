@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
+import './style.css';
 
 const Stats = ({ pokemon }) => {
   const [pokemonStats, setPokemonStats] = useState({
@@ -44,17 +45,19 @@ const Stats = ({ pokemon }) => {
   };
   return (
     <div>
-      <img src={pokemonStats.image} />
-      <span>{pokemonStats.name}</span>
-      <span>{pokemonStats.type}</span>
+      <div className="poke-container">
+        <img src={pokemonStats.image} />
+        <span>{pokemonStats.name}</span>
+        <span>{pokemonStats.type}</span>
+      </div>
       <div className="stats-container">
-        <span>Hp: {pokemonStats.hp}</span>
-        <span>Attack: {pokemonStats.attack}</span>
-        <span>Defenese: {pokemonStats.defense}</span>
-        <span>Sp.Att: {pokemonStats.spAtt}</span>
-        <span>Sp.Def: {pokemonStats.spDef}</span>
-        <span>Speed: {pokemonStats.speed}</span>
-        <span>Total: {pokemonStats.total}</span>
+        <span>Hp:{pokemonStats.hp}</span>
+        <span>Attack:{pokemonStats.attack}</span>
+        <span>Defenese:{pokemonStats.defense}</span>
+        <span>Sp.Att:{pokemonStats.spAtt}</span>
+        <span>Sp.Def:{pokemonStats.spDef}</span>
+        <span>Speed:{pokemonStats.speed}</span>
+        <span>Total:{pokemonStats.total}</span>
       </div>
       <button onClick={searchPokemon}>hi</button>
     </div>

@@ -38,9 +38,9 @@ export default function App() {
     <div>
       <h1>Pokemon Spin The Wheel</h1>
       <div className="container">
-        <Wheel array={pokeArray} landed={setPokePicked} />
+        {/* <Wheel array={pokeArray} landed={setPokePicked} /> */}
         <button onClick={spinWheels}>Spin</button>
-        <Wheel array={pokeArray1} landed={setPokePicked1} />
+        {/* <Wheel array={pokeArray1} landed={setPokePicked1} /> */}
       </div>
       {!spun || (
         <>

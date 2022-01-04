@@ -31,12 +31,6 @@ span strong {
   height: 100%;
   transform: rotate(-135deg);
 }
-span {
-  width: 50%;
-  height: 50%;
-  display: inline-block;
-  position: absolute;
-}
 .span1 {
   clip-path: polygon(0 92%, 100% 50%, 0 8%);
   background-color: red;
@@ -66,4 +60,7 @@ span {
 }
 .stats-container {
   display: grid;
+}
+.display-container {
+  display: flex;
 }

@@ -43,11 +43,11 @@ export default function App() {
         {/* <Wheel array={pokeArray1} landed={setPokePicked1} /> */}
       </div>
       {!spun || (
-        <>
+        <div className="display-container">
           <span>Results</span>
           <Stats pokemon={pokePicked} />
           <Stats pokemon={pokePicked1} />
-        </>
+        </div>
       )}
     </div>
   );

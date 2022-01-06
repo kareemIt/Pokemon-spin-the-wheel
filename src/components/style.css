@@ -31,6 +31,12 @@ span strong {
   height: 100%;
   transform: rotate(-135deg);
 }
+.box span {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  display: inline-block;
+}
 .span1 {
   clip-path: polygon(0 92%, 100% 50%, 0 8%);
   background-color: red;
@@ -44,7 +50,7 @@ span strong {
   right: 0px;
 }
 .span3 {
-  clip-path: polygon(50% 100%, 92% 0, 8% 0);
+  clip-path: polygon(15% 56%, 100% 0, 73% 96%);
   background-color: green;
   left: 120px;
   bottom: 0px;

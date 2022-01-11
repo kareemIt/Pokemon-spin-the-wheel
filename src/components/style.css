@@ -21,3 +21,10 @@ span strong {
 .display-container {
   display: flex;
 }
+.letter-in {
+  transition: 0.32s ease;
+}
+.letter-out {
+  transform: rotateX(90deg);
+  transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+}

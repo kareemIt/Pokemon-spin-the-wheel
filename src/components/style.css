@@ -28,7 +28,34 @@ span strong {
   transform: rotateX(90deg);
   transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
 }
-.col {
+.col0 {
+  opacity: 1;
+}
+.col1 {
+  position: absolute;
+  opacity: 0;
+}
+.col2 {
+  position: absolute;
+  opacity: 0;
+}
+.col3 {
+  position: absolute;
+  opacity: 0;
+}
+.col4 {
+  position: absolute;
+  opacity: 0;
+}
+.col5 {
+  position: absolute;
+  opacity: 0;
+}
+.col6 {
+  position: absolute;
+  opacity: 0;
+}
+.col7 {
   position: absolute;
   opacity: 0;
 }

@@ -30,10 +30,24 @@ export default function App() {
   ];
 
   const spinWheels = () => {
-    //spin
+    const randomNum = Math.floor(Math.random() * (20 - 10 + 1) + 10);
+    let counter = 0;
+    for (let i = 0; i < randomNum; i++) {
+      setTimeout(() => {
+        const currentcol = document.querySelector('#col' + counter);
+        currentcol.style.opacity = '0';
+      }, 5000);
+      setTimeout(() => {
+        const changecol = document.querySelector('#col1');
+        console.log(changecol);
+        changecol.style.opacity = '1';
+      }, 5000);
+      if (counter > 7) {
+        counter = 0;
+      }
+    }
     setSpun(true);
   };
-  // console.log(pokePicked);
   return (
     <div>
       <h1>Pokemon Spin The Wheel</h1>

@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css';
 
-const Wheel = ({ array, landed }) => {
+const Wheel = ({ array, landed, wheelType }) => {
   return (
     <div>
-      <div>
+      <div className={wheelType}>
         {array.map((letter, index) => {
           return (
             <div className={'col' + index} key={index}>

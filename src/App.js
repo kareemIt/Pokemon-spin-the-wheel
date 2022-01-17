@@ -21,14 +21,14 @@ export default function App() {
     'Exploud',
   ];
   const pokeArray1 = [
-    'Golurk',
+    'Mamoswine',
     'Gengar',
     'Ursaring',
     'Houndoom',
     'Haxorus',
     'Swampert',
     'Umbreon',
-    'Mamoswine',
+    'Golurk',
   ];
   useEffect(() => {
     if (rightDone && leftDone) {

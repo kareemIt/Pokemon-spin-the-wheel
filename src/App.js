@@ -5,8 +5,8 @@ import Wheel from './components/Wheel';
 
 export default function App() {
   const [spun, setSpun] = useState(false);
-  const [pokePicked, setPokePicked] = useState('gengar');
-  const [pokePicked1, setPokePicked1] = useState('gengar');
+  const [pokePicked, setPokePicked] = useState('');
+  const [pokePicked1, setPokePicked1] = useState('');
   const [leftDone, setLeftDone] = useState(false);
   const [rightDone, setRightDone] = useState(false);
 
@@ -76,7 +76,7 @@ export default function App() {
       changeCol.style.opacity = 1;
       changeCol.style.backgroundColor = 'Aqua';
     }
-    setPokePicked(pokeArray[randomNum % 8]);
+    setPokePicked1(pokeArray1[randomNum % 8]);
     setRightDone(true);
   };
 

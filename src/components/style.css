@@ -20,6 +20,7 @@ span strong {
 }
 .display-container {
   display: flex;
+  justify-content: space-around;
 }
 .letter-in {
   transition: 0.32s ease;

@@ -94,7 +94,9 @@ export default function App() {
       </div>
       {!spun || (
         <div>
-          <span>Results</span>
+          <div className="results">
+            <span>Results</span>
+          </div>
           <div className="display-container">
             <Stats pokemon={pokePicked} />
             <Stats pokemon={pokePicked1} />

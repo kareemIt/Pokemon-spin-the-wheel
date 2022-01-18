@@ -15,6 +15,9 @@ const Stats = ({ pokemon }) => {
     speed: '',
     total: '',
   });
+  if (pokemon == 'darmanitan') {
+    pokemon = 'darmanitan-standard';
+  }
   const searchPokemon = () => {
     Axios.get('https://pokeapi.co/api/v2/pokemon/' + pokemon).then(
       (response) => {

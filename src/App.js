@@ -11,24 +11,24 @@ export default function App() {
   const [rightDone, setRightDone] = useState(false);
 
   const pokeArray = [
-    'Darmanitan',
-    'Salamence',
-    'Luxray',
-    'Gigalith',
-    'Metagross',
-    'Ambipom',
-    'Dracozolt',
-    'Exploud',
+    'darmanitan',
+    'salamence',
+    'luxray',
+    'gigalith',
+    'metagross',
+    'ambipom',
+    'dracozolt',
+    'exploud',
   ];
   const pokeArray1 = [
-    'Mamoswine',
-    'Gengar',
-    'Ursaring',
-    'Houndoom',
-    'Haxorus',
-    'Swampert',
-    'Umbreon',
-    'Golurk',
+    'mamoswine',
+    'gengar',
+    'ursaring',
+    'houndoom',
+    'haxorus',
+    'swampert',
+    'umbreon',
+    'golurk',
   ];
   useEffect(() => {
     if (rightDone && leftDone) {
@@ -45,15 +45,18 @@ export default function App() {
     const left = document.querySelector('.left');
     for (let i = 0; i < randomNum; i++) {
       await sleep(100);
-      const currentcol = left.querySelector('.col' + counter);
-      currentcol.style.opacity = 0;
+      const currentCol = left.querySelector('.col' + counter);
+      // currentCol.style.opacity = 0;
+      currentCol.style.backgroundColor = 'white';
       counter++;
       if (counter > 7) {
         counter = 0;
       }
-      const changecol = left.querySelector('.col' + counter);
-      changecol.style.opacity = 1;
+      const changeCol = left.querySelector('.col' + counter);
+      changeCol.style.opacity = 1;
+      changeCol.style.backgroundColor = 'Aqua';
     }
+    setPokePicked(pokeArray[randomNum % 8]);
     setLeftDone(true);
   };
   const spinWheel2 = async () => {
@@ -62,15 +65,18 @@ export default function App() {
     const right = document.querySelector('.right');
     for (let i = 0; i < randomNum; i++) {
       await sleep(100);
-      const currentcol = right.querySelector('.col' + counter);
-      currentcol.style.opacity = 0;
+      const currentCol = right.querySelector('.col' + counter);
+      // currentCol.style.opacity = 0;
+      currentCol.style.backgroundColor = 'white';
       counter++;
       if (counter > 7) {
         counter = 0;
       }
-      const changecol = right.querySelector('.col' + counter);
-      changecol.style.opacity = 1;
+      const changeCol = right.querySelector('.col' + counter);
+      changeCol.style.opacity = 1;
+      changeCol.style.backgroundColor = 'Aqua';
     }
+    setPokePicked(pokeArray[randomNum % 8]);
     setRightDone(true);
   };
 

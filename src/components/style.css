@@ -31,7 +31,7 @@ span strong {
 .left,
 .right {
   border: black solid 2px;
-  display: flex;
+  /* display: flex; */
 }
 
 .col0 {
@@ -45,6 +45,6 @@ span strong {
 .col6,
 .col6,
 .col7 {
-  opacity: 0;
-  position: absolute;
+  opacity: 1;
+  /* position: absolute; */
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './style.css';
 
@@ -46,6 +46,13 @@ const Stats = ({ pokemon }) => {
       }
     );
   };
+  useEffect(() => {
+    if (pokemon != '') {
+      searchPokemon();
+      console.log(pokemon);
+    }
+  }, [pokemon]);
+
   return (
     <div>
       <div className="poke-container">
@@ -62,7 +69,6 @@ const Stats = ({ pokemon }) => {
         <span>Speed:{pokemonStats.speed}</span>
         <span>Total:{pokemonStats.total}</span>
       </div>
-      <button onClick={searchPokemon}>hi</button>
     </div>
   );
 };

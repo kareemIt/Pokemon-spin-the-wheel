@@ -30,7 +30,6 @@ const Stats = ({ pokemon }) => {
         const typing = response.data.types.map((index) => {
           return index.type.name + ' ';
         });
-        console.log(response);
         setPokemonStats({
           image: response.data.sprites.front_default,
           name: pokemon,
@@ -49,7 +48,6 @@ const Stats = ({ pokemon }) => {
   useEffect(() => {
     if (pokemon != '') {
       searchPokemon();
-      console.log(pokemon);
     }
   }, [pokemon]);
 

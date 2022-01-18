@@ -47,6 +47,7 @@ const Stats = ({ pokemon }) => {
   };
   useEffect(() => {
     if (pokemon != '') {
+      pokemon = pokemon.charAt(0).toLowerCase() + pokemon.slice(1);
       searchPokemon();
     }
   }, [pokemon]);
@@ -55,7 +56,10 @@ const Stats = ({ pokemon }) => {
     <div>
       <div className="poke-container">
         <img src={pokemonStats.image} />
-        <span>{pokemonStats.name}</span>
+        <span>
+          {pokemonStats.name.charAt(0).toUpperCase() +
+            pokemonStats.name.slice(1)}
+        </span>
         <span>{pokemonStats.type}</span>
       </div>
       <div className="stats-container">

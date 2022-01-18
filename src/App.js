@@ -11,24 +11,24 @@ export default function App() {
   const [rightDone, setRightDone] = useState(false);
 
   const pokeArray = [
-    'darmanitan',
-    'salamence',
-    'luxray',
-    'gigalith',
-    'metagross',
-    'ambipom',
-    'dracozolt',
-    'exploud',
+    'Darmanitan',
+    'Salamence',
+    'Luxray',
+    'Gigalith',
+    'Metagross',
+    'Ambipom',
+    'Dracozolt',
+    'Exploud',
   ];
   const pokeArray1 = [
-    'mamoswine',
-    'gengar',
-    'ursaring',
-    'houndoom',
-    'haxorus',
-    'swampert',
-    'umbreon',
-    'golurk',
+    'Mamoswine',
+    'Gengar',
+    'Ursaring',
+    'Houndoom',
+    'Haxorus',
+    'Swampert',
+    'Umbreon',
+    'Golurk',
   ];
   useEffect(() => {
     if (rightDone && leftDone) {

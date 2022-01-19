@@ -40,19 +40,18 @@ export default function App() {
   }
 
   const spinWheel1 = async () => {
-    const randomNum = Math.floor(Math.random() * (20 - 10 + 1) + 10);
-    await randomPokemonPicked('left', randomNum);
-    await setPokePicked(pokeArray[randomNum % 8]);
-    await setLeftDone(true);
+    const randomNum = await randomPokemonPicked('left');
+    setPokePicked(pokeArray[randomNum % 8]);
+    setLeftDone(true);
   };
   const spinWheel2 = async () => {
-    const randomNum = Math.floor(Math.random() * (20 - 10 + 1) + 10);
-    await randomPokemonPicked('right', randomNum);
-    await setPokePicked1(pokeArray1[randomNum % 8]);
-    await setRightDone(true);
+    const randomNum = await randomPokemonPicked('right');
+    setPokePicked1(pokeArray1[randomNum % 8]);
+    setRightDone(true);
   };
 
-  async function randomPokemonPicked(side, randomNum) {
+  async function randomPokemonPicked(side) {
+    const randomNum = Math.floor(Math.random() * (20 - 10 + 1) + 10);
     let counter = 0;
     const right = document.querySelector('.' + side);
     for (let i = 0; i < randomNum; i++) {
@@ -67,18 +66,22 @@ export default function App() {
       changeCol.style.opacity = 1;
       changeCol.style.backgroundColor = '#ffcb05';
     }
+    return randomNum;
   }
 
-  function spin() {
-    spinWheel1();
-    spinWheel2();
-  }
   return (
     <div>
       <h1>Pokemon Randomizer</h1>
       <div className="container">
         <Wheel array={pokeArray} landed={setPokePicked} wheelType={'left'} />
-        <button onClick={spin}>Spin</button>
+        <button
+          onClick={() => {
+            spinWheel1();
+            spinWheel2();
+          }}
+        >
+          Spin
+        </button>
         <Wheel array={pokeArray1} landed={setPokePicked1} wheelType={'right'} />
       </div>
       {!spun || (

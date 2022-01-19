@@ -9,7 +9,7 @@ const Wheel = ({ array, landed, wheelType }) => {
           return (
             <div className={'col' + index} key={index}>
               {letter.split('').map((letter, index) => (
-                <span className="letter-in">{letter}</span>
+                <span className="letter">{letter}</span>
               ))}
             </div>
           );

@@ -24,13 +24,6 @@ span strong {
   display: flex;
   justify-content: space-around;
 }
-.letter-in {
-  transition: 0.32s ease;
-}
-.letter-out {
-  transform: rotateX(90deg);
-  transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
-}
 .left,
 .right {
   border: black solid 2px;

@@ -47,14 +47,14 @@ export default function App() {
       await sleep(100);
       const currentCol = left.querySelector('.col' + counter);
       // currentCol.style.opacity = 0;
-      currentCol.style.backgroundColor = 'white';
+      currentCol.style.backgroundColor = '#3d7dca';
       counter++;
       if (counter > 7) {
         counter = 0;
       }
       const changeCol = left.querySelector('.col' + counter);
       changeCol.style.opacity = 1;
-      changeCol.style.backgroundColor = 'Aqua';
+      changeCol.style.backgroundColor = '#ffcb05';
     }
     setPokePicked(pokeArray[randomNum % 8]);
     setLeftDone(true);
@@ -67,14 +67,14 @@ export default function App() {
       await sleep(100);
       const currentCol = right.querySelector('.col' + counter);
       // currentCol.style.opacity = 0;
-      currentCol.style.backgroundColor = 'white';
+      currentCol.style.backgroundColor = '#3d7dca';
       counter++;
       if (counter > 7) {
         counter = 0;
       }
       const changeCol = right.querySelector('.col' + counter);
       changeCol.style.opacity = 1;
-      changeCol.style.backgroundColor = 'Aqua';
+      changeCol.style.backgroundColor = '#ffcb05';
     }
     setPokePicked1(pokeArray1[randomNum % 8]);
     setRightDone(true);

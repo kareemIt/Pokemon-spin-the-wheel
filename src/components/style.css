@@ -34,7 +34,6 @@ span strong {
 .left,
 .right {
   border: black solid 2px;
-  /* display: flex; */
 }
 
 .col0 {
@@ -49,7 +48,6 @@ span strong {
 .col6,
 .col7 {
   opacity: 1;
-  /* position: absolute; */
 }
 h1 {
   text-align: center;
@@ -57,4 +55,11 @@ h1 {
 .results {
   text-align: center;
   border-bottom: 1px black solid;
+  padding: 10px;
+}
+body {
+  background: #3d7dca;
+}
+span {
+  color: black;
 }

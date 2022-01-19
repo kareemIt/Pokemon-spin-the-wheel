@@ -47,9 +47,7 @@ const Stats = ({ pokemon }) => {
   };
   useEffect(() => {
     if (pokemon != '') {
-      console.log(pokemon);
       pokemon = pokemon.charAt(0).toLowerCase() + pokemon.slice(1);
-      console.log(pokemon);
       searchPokemon();
     }
   }, [pokemon]);

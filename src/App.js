@@ -41,32 +41,23 @@ export default function App() {
 
   const spinWheel1 = async () => {
     const randomNum = Math.floor(Math.random() * (20 - 10 + 1) + 10);
-    let counter = 0;
-    const left = document.querySelector('.left');
-    for (let i = 0; i < randomNum; i++) {
-      await sleep(100);
-      const currentCol = left.querySelector('.col' + counter);
-      // currentCol.style.opacity = 0;
-      currentCol.style.backgroundColor = '#3d7dca';
-      counter++;
-      if (counter > 7) {
-        counter = 0;
-      }
-      const changeCol = left.querySelector('.col' + counter);
-      changeCol.style.opacity = 1;
-      changeCol.style.backgroundColor = '#ffcb05';
-    }
-    setPokePicked(pokeArray[randomNum % 8]);
-    setLeftDone(true);
+    await randomPokemonPicked('left', randomNum);
+    await setPokePicked(pokeArray[randomNum % 8]);
+    await setLeftDone(true);
   };
   const spinWheel2 = async () => {
     const randomNum = Math.floor(Math.random() * (20 - 10 + 1) + 10);
+    await randomPokemonPicked('right', randomNum);
+    await setPokePicked1(pokeArray1[randomNum % 8]);
+    await setRightDone(true);
+  };
+
+  async function randomPokemonPicked(side, randomNum) {
     let counter = 0;
-    const right = document.querySelector('.right');
+    const right = document.querySelector('.' + side);
     for (let i = 0; i < randomNum; i++) {
       await sleep(100);
       const currentCol = right.querySelector('.col' + counter);
-      // currentCol.style.opacity = 0;
       currentCol.style.backgroundColor = '#3d7dca';
       counter++;
       if (counter > 7) {
@@ -76,9 +67,7 @@ export default function App() {
       changeCol.style.opacity = 1;
       changeCol.style.backgroundColor = '#ffcb05';
     }
-    setPokePicked1(pokeArray1[randomNum % 8]);
-    setRightDone(true);
-  };
+  }
 
   function spin() {
     spinWheel1();

@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const Wheel = ({ array, landed, wheelType }) => {
+const Wheel = ({ array, wheelType }) => {
   return (
     <div>
       <div className={wheelType}>

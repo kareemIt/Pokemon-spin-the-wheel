@@ -73,7 +73,7 @@ export default function App() {
     <div>
       <h1>Pokemon Randomizer</h1>
       <div className="container">
-        <Wheel array={pokeArray} landed={setPokePicked} wheelType={'left'} />
+        <Wheel array={pokeArray} wheelType={'left'} />
         <button
           onClick={() => {
             spinWheel1();
@@ -82,7 +82,7 @@ export default function App() {
         >
           Spin
         </button>
-        <Wheel array={pokeArray1} landed={setPokePicked1} wheelType={'right'} />
+        <Wheel array={pokeArray1} wheelType={'right'} />
       </div>
       {!spun || (
         <div>

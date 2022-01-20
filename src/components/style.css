@@ -40,6 +40,7 @@ span strong {
 }
 .active {
   background-color: #ffcb05;
+  border-radius: 5px;
   animation: pop-in 0.1s forwards;
 }
 @keyframes pop-in {

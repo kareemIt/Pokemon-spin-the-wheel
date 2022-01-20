@@ -44,6 +44,7 @@ export default function App() {
     setPokePicked(pokeArray[randomNum % 8]);
     setLeftDone(true);
   };
+
   const spinWheel2 = async () => {
     const randomNum = await randomPokemonPicked('right');
     setPokePicked1(pokeArray1[randomNum % 8]);
@@ -68,7 +69,6 @@ export default function App() {
     }
     return randomNum;
   }
-
   return (
     <div>
       <h1>Pokemon Randomizer</h1>

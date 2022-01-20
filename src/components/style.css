@@ -62,6 +62,10 @@ h1 {
 body {
   background: #3d7dca;
 }
+.poke-container img {
+  height: 100px;
+  width: 100px;
+}
 span {
   color: black;
 }

@@ -20,10 +20,6 @@ span strong {
 .poke-container {
   display: grid;
 }
-.poke-container img {
-  height: 128px;
-  width: 128px;
-}
 .stats-container {
   display: grid;
 }

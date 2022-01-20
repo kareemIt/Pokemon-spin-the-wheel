@@ -15,61 +15,59 @@ const Stats = ({ pokemon }) => {
     speed: '',
     total: '',
   });
+
   if (pokemon == 'Darmanitan') {
     pokemon = 'darmanitan-standard';
   }
-  const searchPokemon = () => {
-    Axios.get('https://pokeapi.co/api/v2/pokemon/' + pokemon).then(
-      (response) => {
-        const hp = response.data.stats[0].base_stat;
-        const attack = response.data.stats[1].base_stat;
-        const defense = response.data.stats[2].base_stat;
-        const spAtt = response.data.stats[3].base_stat;
-        const spDef = response.data.stats[4].base_stat;
-        const speed = response.data.stats[5].base_stat;
-        const typing = response.data.types.map((index) => {
-          return index.type.name + ' ';
-        });
-        setPokemonStats({
-          image: response.data.sprites.front_default,
-          name: pokemon,
-          type: typing,
-          hp,
-          attack,
-          defense,
-          spAtt,
-          spDef,
-          speed,
-          total: hp + attack + defense + spAtt + spDef + speed,
-        });
-      }
+  const searchPokemon = async (pokemonName) => {
+    const { data } = await Axios.get(
+      'https://pokeapi.co/api/v2/pokemon/' + pokemonName
     );
+
+    const [hp, attack, defense, spAtt, spDef, speed] = data.stats.map(
+      (d) => d.base_stat
+    );
+    const total = hp + attack + defense + spAtt + spDef + speed;
+    const typing = data.types.map((item) => item.type.name).join(' ');
+    const image = data.sprites.front_default;
+
+    setPokemonStats({
+      image,
+      name: pokemonName,
+      type: typing,
+      hp,
+      attack,
+      defense,
+      spAtt,
+      spDef,
+      speed,
+      total,
+    });
   };
+
   useEffect(() => {
-    if (pokemon != '') {
-      pokemon = pokemon.toLowerCase();
-      searchPokemon();
-    }
+    if (!pokemon) return;
+
+    searchPokemon(pokemon.toLowerCase());
   }, [pokemon]);
+
+  const pokemonName = pokemon[0].toUpperCase() + pokemon.slice(1);
 
   return (
     <div>
       <div className="poke-container">
         <img src={pokemonStats.image} />
-        <span>
-          {pokemonStats.name.charAt(0).toUpperCase() +
-            pokemonStats.name.slice(1)}
-        </span>
+        <h2>{pokemonName}</h2>
         <span>{pokemonStats.type}</span>
       </div>
       <div className="stats-container">
-        <span>Hp:{pokemonStats.hp}</span>
-        <span>Attack:{pokemonStats.attack}</span>
-        <span>Defenese:{pokemonStats.defense}</span>
-        <span>Sp.Att:{pokemonStats.spAtt}</span>
-        <span>Sp.Def:{pokemonStats.spDef}</span>
-        <span>Speed:{pokemonStats.speed}</span>
-        <span>Total:{pokemonStats.total}</span>
+        <span>Hp: {pokemonStats.hp}</span>
+        <span>Attack: {pokemonStats.attack}</span>
+        <span>Defenese: {pokemonStats.defense}</span>
+        <span>Sp.Att: {pokemonStats.spAtt}</span>
+        <span>Sp.Def: {pokemonStats.spDef}</span>
+        <span>Speed: {pokemonStats.speed}</span>
+        <span>Total: {pokemonStats.total}</span>
       </div>
     </div>
   );

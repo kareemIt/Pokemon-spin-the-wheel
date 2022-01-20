@@ -1,5 +1,8 @@
-.container {
-  display: flex;
+.wheel-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 10px;
   margin: 0 auto;
   width: 200px;
 }
@@ -17,6 +20,10 @@ span strong {
 .poke-container {
   display: grid;
 }
+.poke-container img {
+  height: 128px;
+  width: 128px;
+}
 .stats-container {
   display: grid;
 }
@@ -24,24 +31,29 @@ span strong {
   display: flex;
   justify-content: space-around;
 }
-.left,
-.right {
-  border: black solid 2px;
+.wheel {
+  border: #000a solid 2px;
+  border-radius: 5px;
+}
+.row {
+  padding: 1px 5px;
+}
+.active {
+  background-color: #ffcb05;
+  animation: pop-in 0.1s forwards;
+}
+@keyframes pop-in {
+  20% {
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(0.957);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.col0 {
-  opacity: 1;
-}
-.col1,
-.col2,
-.col3,
-.col4,
-.col5,
-.col6,
-.col6,
-.col7 {
-  opacity: 1;
-}
 h1 {
   text-align: center;
 }
@@ -55,4 +67,17 @@ body {
 }
 span {
   color: black;
+}
+
+main {
+  max-width: 300px;
+  margin: 0 auto;
+}
+button {
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+  background: none;
+  border: 2px black solid;
+  cursor: pointer;
 }

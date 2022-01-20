@@ -1,23 +1,19 @@
 import React from 'react';
 import './style.css';
 
-const Wheel = ({ array, wheelType }) => {
-  return (
-    <div>
-      <div className={wheelType}>
-        {array.map((letter, index) => {
-          return (
-            <div className={'col' + index} key={index}>
-              {letter.split('').map((letter, index) => (
-                <span className="letter" key={index}>
-                  {letter}
-                </span>
-              ))}
-            </div>
-          );
-        })}
-      </div>
+const Wheel = ({ pokeNames, wheelType, activeRow }) => (
+  <div>
+    <div className={'wheel ' + wheelType}>
+      {pokeNames.map((name, index) => (
+        <div
+          className={'row' + (index === activeRow ? ' active' : '')}
+          key={name}
+        >
+          {name}
+        </div>
+      ))}
     </div>
-  );
-};
+  </div>
+);
+
 export default Wheel;
